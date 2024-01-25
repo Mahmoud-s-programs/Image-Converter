@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Converter</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-dark-blue text-light-green-gray font-sans min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="p-6 max-w-md mx-auto rounded-xl shadow-md flex flex-col space-y-4 bg-cool-gray text-dark-blue w-full"
+    >
+      <h1 class="text-2xl font-bold mb-4 text-center text-light-green-gray">
+        Image Converter
+      </h1>
+
+      <label
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        for="imageInput"
+        >Upload file</label
+      >
+      <input
+        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+        aria-describedby="file_input_help"
+        id="imageInput"
+        type="file"
+        accept="image/*"
+      />
+      <p
+        class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+        id="file_input_help"
+      >
+        PNG, JPG or WEBP
+      </p>
+
+      <select
+        id="formatSelect"
+        class="mb-4 p-2 border rounded w-full"
+        style="border-color: #41ead4"
+        <!--
+        Consider
+        replacing
+        this
+        inline
+        style
+        --
+      >
+        >
+        <option value="image/png">PNG</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/webp">WEBP</option>
+      </select>
+      <div
+        id="progressBar"
+        class="w-0 h-2 bg-blue-600 rounded-full"
+        style="transition: width 0.4s"
+      ></div>
+      <button
+        onclick="convertImage()"
+        class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full"
+      >
+        Convert
+      </button>
+      <a
+        id="downloadLink"
+        href="#"
+        class="hidden text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full"
+        >Download</a
+      >
+    </div>
+    <canvas id="canvas" class="hidden"></canvas>
+  </body>
+  <script src="./js/script.js"></script>
+</html>
